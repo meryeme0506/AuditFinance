@@ -5,7 +5,9 @@ import lombok.AllArgsConstructor;
 import audit.finance.repository.FinanceEntityRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @AllArgsConstructor
@@ -17,7 +19,21 @@ public class FinanceService {
         return financeEntityRepository.findAll();
     }
 
-    public Finance save(Finance finance) {
-        return financeEntityRepository.save(finance);
+    public Optional<Finance> findById(Integer id){
+        return financeEntityRepository.findById(id);
     }
+
+    public List<Finance> findByStockKey(String stockKey){
+        return financeEntityRepository.findByStockKey(stockKey);
+    }
+
+    public List<Finance> findByDateTarget(Date dateTarget){
+        return financeEntityRepository.findByDateTarget(dateTarget);
+    }
+
+    public List<Finance> findByBetween(Date dateFrom, Date dateTo){
+        return financeEntityRepository.findByBetween(dateFrom,dateTo);
+    }
+
+
 }

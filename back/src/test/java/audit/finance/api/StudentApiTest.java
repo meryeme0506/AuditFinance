@@ -2,7 +2,6 @@ package audit.finance.api;
 
 import audit.finance.entity.Student;
 import audit.finance.repository.FinanceEntityRepository;
-import audit.finance.service.StudentService;
 import org.assertj.core.api.Assertions;
 import org.jeasy.random.EasyRandom;
 import org.junit.jupiter.api.BeforeEach;

@@ -14,7 +14,7 @@ public interface FinanceEntityRepository extends JpaRepository<Finance,Integer> 
     List<Finance> findAll();
 
     @Query("select f from finance f  where f.id = ?1")
-    Finance findById(Integer id);
+    Optional<Finance> findById(Integer id);
 
     @Query("select f from finance f  where f.stock_key = ?1")
     List<Finance> findByStockKey(String stockKey);
@@ -23,9 +23,9 @@ public interface FinanceEntityRepository extends JpaRepository<Finance,Integer> 
     List<Finance> findByDateTarget(Date dateTarget);
 
     @Query("select f from finance f where f.date_target >= ?1 and f.date_target <= ?2")
-    List<Finance> findByBetween(Date date1, Date date2);
+    List<Finance> findByBetween(Date dateFrom, Date dateTo);
 
-    @Query(value="select stock_key from finance groub by count(stock_key) DESC") // vérif sur DB
+    @Query(value="select stock_key, count(stock_key) from finance groub by count(stock_key) DESC")
     Optional<Finance> findMostSearchedStock();
 
 
