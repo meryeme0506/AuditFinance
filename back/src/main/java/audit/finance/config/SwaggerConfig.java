@@ -29,7 +29,7 @@ public class SwaggerConfig {
                 "Spring Boot REST API for exchange rate",
                 "1.0",
                 "Terms of service",
-                new Contact("LE Long","google.com", "do-thanh-long.le@dauphine.eu"),
+                new Contact("","google.com", ""),
                 "Apache License Version 2.0",
                 "https://www.apache.org/licenses/LICENSE-2.0");
         return apiInfo;
