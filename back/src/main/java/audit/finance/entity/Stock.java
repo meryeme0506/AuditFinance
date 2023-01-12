@@ -6,12 +6,11 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "finance")
+@Table(name = "stock")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-
-public class Finance {
+public class Stock {
     @Id
     @GeneratedValue(generator = "finance_id_sequence")
     private Integer id;
