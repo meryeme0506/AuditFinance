@@ -7,4 +7,10 @@ const routes: Routes = [];
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+  const routes: Routes = [
+    { path: '', redirectTo: 'stocks', pathMatch: 'full' },
+    { path: 'stocks', component: StocksListComponent }
+
+  ];
+}

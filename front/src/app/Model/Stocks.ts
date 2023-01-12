@@ -9,6 +9,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {HttpClientModule} from "@angular/common/http";
 import { MainNavbarComponent } from './main-navbar/main-navbar.component';
 import { StocksListComponent } from './stocks-list/stocks-list.component';
+import {Stocks} from "./Stocks";
 
 @NgModule({
   declarations: [
@@ -29,3 +30,9 @@ import { StocksListComponent } from './stocks-list/stocks-list.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+export class Stock {
+  id: number;
+  stockKey: string;
+  dateTarget: Date;
+}
