@@ -9,24 +9,24 @@ import {Stock} from "./Stock";
   styleUrls: ['./stocks-list.component.css']
 })
 export class StocksListComponent implements OnInit {
-  private stocksList: Stocks[] | undefined;
+  private stocksList: Stock[] | undefined;
 
   constructor(private readonly httpClient: HttpClient) {
-    url : private URL_STOCKS = 'http://localhost:52001';
-    stocksList: Stocks[];
+    private URL_STOCKS = 'http://localhost:52001';
   }
 
-  getAllStocks(): Observable<Stocks[]> {
+  // @ts-ignore
+  getAllStocks() {
     const url = `${this.URL_STOCKS}/stocks`;
-    return this.httpClient.get<Stocks[]>(url);
+    return this.httpClient.get<Stock[]>(url);
   }
 
-  ngOnInit(): void {
+  ngOnInit = (): void => {
     this.getAllStocks()
         .pipe()
         .subscribe( value => {
           this.stocksList = value;
         });
-  }
+  };
 
 }
