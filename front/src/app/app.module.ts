@@ -9,12 +9,14 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {HttpClientModule} from "@angular/common/http";
 import { MainNavbarComponent } from './main-navbar/main-navbar.component';
 import { StocksListComponent } from './stocks-list/stocks-list.component';
+import { UserComponent } from './User/user/user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainNavbarComponent,
-    StocksListComponent
+    StocksListComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,

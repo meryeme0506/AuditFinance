@@ -18,6 +18,8 @@ import java.util.Optional;
 @RestController
 @RequestMapping("stock")
 @AllArgsConstructor
+
+@CrossOrigin(origins = {"http://localhost:4200"})
 public class StockAPI {
 
     private final StockEntityRepository stockEntityRepository;

@@ -1,4 +1,5 @@
-<p>main-navbar works!</p>
+<p>main-navbar works! User {{user}}</p>
+<!--
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
         <a class="navbar-brand" href="#">Navbar</a>
@@ -14,4 +15,15 @@
             </ul>
         </div>
     </div>
-</nav>
+</nav>-->
+<button (click)="getStockData()" )>
+    Cliquez pour obtenir les données
+</button>
+
+<div *ngFor="let element of elements">
+    {{element}}
+</div>
+
+<ul>
+    <li (click)="getData()"> Données </li>
+</ul>
