@@ -18,8 +18,29 @@ public class Stock {
     private String stockKey;
     @Column(name = "date_target")
     private Date dateTarget;
-    
 
+    public Integer getId() {
+        return id;
+    }
 
+    public String getStockKey() {
+        return stockKey;
+    }
+
+    public Date getDateTarget() {
+        return dateTarget;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public void setStockKey(String stockKey) {
+        this.stockKey = stockKey;
+    }
+
+    public void setDateTarget(Date dateTarget) {
+        this.dateTarget = dateTarget;
+    }
 
 }
