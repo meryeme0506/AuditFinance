@@ -16,7 +16,7 @@ import java.util.Optional;
 
 
 @RestController
-@RequestMapping("finance")
+@RequestMapping("stock")
 @AllArgsConstructor
 public class StockAPI {
 
