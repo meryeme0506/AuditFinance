@@ -42,7 +42,7 @@ public class StockAPI {
         } catch (ParseException e) {
             throw new RuntimeException(e);
         }
-        return stockEntityRepository.findByDateTarget(date);
+        return stockEntityRepository.findByDateTarget(DateUtils.addDays(date,+1));
     }
 
     @GetMapping("/stocks/dateFrom={dateFrom}&dateTo={dateTo}")
@@ -55,10 +55,10 @@ public class StockAPI {
         } catch (ParseException e) {
             throw new RuntimeException(e);
         }
-        return stockEntityRepository.findByBetween(date1, date2);
+        return stockEntityRepository.findByBetween(DateUtils.addDays(date1,+1), DateUtils.addDays(date2,+1));
     }
 
-    @PostMapping("/stocks")
+    @PostMapping("/stocks/create")
     public ResponseEntity<Stock> saveStock(@RequestBody Stock stock){
        Stock stockCreated = stockEntityRepository.save(new Stock(stock.getId(),stock.getStockKey(),stock.getDateTarget()));
        return new ResponseEntity<>(stockCreated, HttpStatus.CREATED);
