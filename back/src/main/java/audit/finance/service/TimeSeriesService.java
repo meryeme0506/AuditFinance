@@ -11,14 +11,20 @@ import java.util.Objects;
 
 public class TimeSeriesService {
 
-    public Object test() {
-        String url = "https://www.alphavantage.co/query?function=TIME_SERIES_WEEKLY&symbol=IBM&apikey=1XDCVS7DM3C1XE20";
+    public static Object gestTimeSeries(String symbol) {
+        String url = "https://www.alphavantage.co/query?function=TIME_SERIES_WEEKLY&symbol="+symbol+"&apikey=1XDCVS7DM3C1XE20";
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<TimeSeries> response = restTemplate.getForEntity(url,TimeSeries.class);
+        ResponseEntity<TimeSeries> response = restTemplate.getForEntity(url, TimeSeries.class);
         TimeSeries res = response.getBody();
         HashMap<String, TimeSerie> serie = Objects.requireNonNull(res).getSerie();
-        TimeSerie t = serie.get("2023-02-02");
+        TimeSerie t = serie.get("2023-02-01");
         System.out.println(t);
         return res.serie.values();
+    }
+
+    public static void main(String[] args) {
+        gestTimeSeries("IBM");
+        
+
     }
 }
